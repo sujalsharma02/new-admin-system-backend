@@ -72,11 +72,9 @@ app.use(async (req, res, next) => {
     }
 });
 
-// Port for local development
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-}
+// Start server (for traditional hosting like Render)
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app;
